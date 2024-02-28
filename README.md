@@ -1,8 +1,9 @@
 <h2><b></b>Arrasta & Solta</b></h2>
 
 WcURL<br>
-Wrapper para a libcurl.dll<br><br>
-
+Wrapper para <i>libcurl</i> feito em <b>Delphi</b>.
+<br>
+<br>
 <h3>Métodos: Done</h3>
 <br>
 <br>
