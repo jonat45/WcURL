@@ -2,3 +2,18 @@
 
 WcURL<br>
 Wrapper para a libcurl.dll<br><br>
+
+<h3>Métodos: Done</h3>
+<br>
+<br>
+<ul>
+	<li><b>curl_easy_init</b></li>
+</ul>
+<br>
+<br>
+<h3>Métodos: Doing</h3>
+<br>
+<br>
+<ul>
+	<li><b>curl_easy_setopt</b></li>
+</ul>
