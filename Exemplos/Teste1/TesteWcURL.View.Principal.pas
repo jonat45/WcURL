@@ -36,35 +36,25 @@ procedure TViewPrincipal.btnTesteBasicoClick(Sender: TObject);
 // https://gist.github.com/alghanmi/c5d7b761b2c9ab199157
 // Feito em C
 var
-     LNum,
-     iNum1,
-     iNum2: Integer;
-     pEnderecoNum: ^Integer;
-
      LCURL: CURL;
      LRES: CURLcode;
      readBuffer: String;
 begin
-//     LNum := Integer(_LISTA_ANIMAS.laRato);
-//
-//     iNum1 := 1;
-//     iNum2 := 2;
-
-     //showmessage(LIBCURL_VERSION);
-//     showmessage(format('Num1: %d | Num2: %d', [iNum1, iNum2]));
-//     showmessage(format('Endereço de memória de Num1: %d | Endereço de memória de Num2: %d', [Integer(@iNum1), Integer(@iNum2)]));
-//
-//     pEnderecoNum := @iNum1;
-//     showmessage(format('Endereço de memória de Num1: %d (%d)', [Integer(pEnderecoNum), Integer(pEnderecoNum^)]));
-//
-//     pEnderecoNum := @iNum2;
-//     showmessage(format('Endereço de memória de Num2: %d (%d)', [Integer(pEnderecoNum), Integer(pEnderecoNum^)]));
-
      LCURL := curl_easy_init;
-
      if Assigned(LCURL) then
      Begin
-          showmessage('Instanciado com sucesso!');
+          // https://stackoverflow.com/questions/4293625/curl-curle-couldnt-resolve-host-in-debug-mode
+          curl_easy_setopt(LCURL, CURLOPT_URL, pAnsiChar('http://teste.com.br'));
+          curl_easy_setopt(LCURL, CURLOPT_CUSTOMREQUEST, 'GET');
+          LRES := curl_easy_perform(LCURL);
+
+          if LRES = CURLE_OK then
+          Begin
+               showmessage('Houve resposta ;)');
+               // tratar resposta...
+          End;
+
+          curl_easy_cleanup(LCURL);
      End;
 end;
 

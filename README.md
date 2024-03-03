@@ -14,12 +14,9 @@ Wrapper para <i>libcurl</i>, feito em <b>Delphi</b>.
 <h3>Métodos: Done</h3>
 <ul>
 	<li><b>curl_easy_init</b></li>
-</ul>
-<br>
-<br>
-<h3>Métodos: Doing</h3>
-<ul>
 	<li><b>curl_easy_setopt</b></li>
+	<li><b>curl_easy_perform</b></li>
+	<li><b>curl_easy_cleanup</b></li>
 </ul>
 </body>
 </html>
